@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <link rel="shortcut icon" href="favicon.ico">
 
-  <title>Creative - Start Bootstrap Theme</title>
+  <title>The Sh*tty Barn</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -72,6 +72,21 @@
       </div>
     </div>
   </header>
+
+  <!-- Raised so far -->
+  <section class="bg-black" id="contribute">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading text-white">Currently raised:</h2>
+          <h3 class="text-white">$<span id="total-raised">0</span> of our $<span id="total-goal">0</span> goal.</h3>
+          <!--<div id="progress-bar" class="progress">
+          </div>-->
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <section id="tiers">
     <div class="container">
@@ -270,6 +285,28 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/creative.min.js"></script>
+
+  <script>
+    (function() {
+      $.get('stripe/total.php', function(total) {
+        if (total) {
+          var decimal = total / 100;
+          var percent = (decimal / 30000) * 100;
+          $('#total-raised').html(decimal.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+          $('#total-goal').html('30,000');
+
+          // $('#progress-bar').html(
+          //   `
+          //     <div class="progress-bar bg-success" role="progressbar" style="width: ${percent.toString()}%" aria-valuenow="${percent.toString()}" aria-valuemin="0" aria-valuemax="100">${percent.toString()}</div>
+          //   `
+          // );
+
+        }
+      });
+
+    })(jQuery)
+  </script>
+
 
 
 </body>

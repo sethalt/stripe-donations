@@ -36,8 +36,8 @@ After installation, run `npm install` and then run `gulp dev` which will open up
 
 #### Gulp Tasks
 
-- `gulp` the default task that builds everything
-- `gulp dev` browserSync opens the project in your default browser and live reloads when changes are made
+- `./node_modules/.bin/gulp` the default task that builds everything
+- `./node_modules/.bin/gulp dev` browserSync opens the project in your default browser and live reloads when changes are made
 - `gulp sass` compiles SCSS files into CSS
 - `gulp minify-css` minifies the compiled CSS file
 - `gulp minify-js` minifies the themes JS file
