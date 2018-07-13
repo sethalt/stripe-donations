@@ -84,6 +84,10 @@ img::-moz-selection {
   background: transparent;
 }
 
+.no-gutter {
+  padding: 2rem 0 !important;
+}
+
 #mainNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
   background-color: #fff;

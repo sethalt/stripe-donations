@@ -81,3 +81,7 @@ img::-moz-selection {
   color: $white;
   background: transparent;
 }
+
+.no-gutter {
+  padding: 2rem 0 !important;
+}
